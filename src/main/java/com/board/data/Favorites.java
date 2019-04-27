@@ -18,4 +18,8 @@ public class Favorites {
     public void removeFav(Integer id) {
         fav.remove(id);
     }
+
+    public List<Integer> getFav(){
+        return fav;
+    }
 }

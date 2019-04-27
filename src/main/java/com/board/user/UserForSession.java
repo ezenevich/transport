@@ -47,4 +47,12 @@ public class UserForSession {
     public String getFav(){
         return fav;
     }
+    public String getLogin(){ return login; }
+    public String getPass(){ return pass; }
+    public String getPhone(){ return phone; }
+    public int getId(){ return id; }
+
+    public void setFav(String fav){
+        this.fav = fav;
+    }
 }

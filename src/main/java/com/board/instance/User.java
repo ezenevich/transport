@@ -5,10 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Getter
+
 @Setter
 @ToString
-@AllArgsConstructor
 @Entity
 @Table(name = "mvcusers")
 public class User implements Serializable {
@@ -38,8 +37,18 @@ public class User implements Serializable {
     public User() {
     }
 
-    public String getLogin(){
-        return  login;
+    public User(int id, String login, String pass, String fav, String phone) {
+        this.id = id;
+        this.login = login;
+        this.pass = pass;
+        this.fav = fav;
+        this.phone = phone;
     }
+
+    public String getLogin(){ return  login; }
+    public String getPass(){ return  pass; }
+    public String getPhone(){ return  phone; }
+    public String getFav(){ return  fav; }
+    public int getId(){ return  id; }
 
 }

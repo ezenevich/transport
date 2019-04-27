@@ -5,10 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Getter
+
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "myitems")
@@ -46,4 +45,16 @@ public class Item implements Serializable {
         this.category = category;
         this.owner = owner;
     }
+
+    public Item() {
+    }
+
+    public String getOwner(){ return owner; }
+    public String getCategory(){ return category; }
+    public String getImg(){ return img; }
+    public String getAbout(){ return about; }
+    public String getName(){ return name; }
+    public String getSmallimg(){ return smallimg; }
+    public int getId(){ return id; }
+    public int getPrice(){ return price; }
 }

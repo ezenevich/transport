@@ -32,7 +32,11 @@ public class UserDAOImlp implements UserDAO {
 
     public User getUserByLogin(String login) {
         logger.info("User with login" + login + " was getted from db");
-        return ((User) template.find("from User u where u.login = ?", login).iterator().next());
+        List<User> r = (List<User>) template.find("from User u where u.login = ?", login);
+        if ( r.isEmpty() ) {
+            return null;
+        }
+        return ( User ) r.get( 0 );
     }
 
     public void addUser(User user) {

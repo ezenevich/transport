@@ -39,7 +39,7 @@ public class CreateController {
                     , req.getParameter("category")
                     , ((UserForSession) req.getSession().getAttribute("user")).getLogin())
             );
-            resp.sendRedirect("/main");
+            resp.sendRedirect("/kursovoi_war/main");
             return null;
         }
     }
