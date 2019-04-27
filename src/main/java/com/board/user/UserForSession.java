@@ -43,4 +43,8 @@ public class UserForSession {
         this.phone = phone;
         return this;
     }
+
+    public String getFav(){
+        return fav;
+    }
 }

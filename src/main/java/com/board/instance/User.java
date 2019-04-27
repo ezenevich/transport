@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "mvcusers")
@@ -35,4 +34,12 @@ public class User implements Serializable {
         this.fav = fav;
         this.phone = phone;
     }
+
+    public User() {
+    }
+
+    public String getLogin(){
+        return  login;
+    }
+
 }
