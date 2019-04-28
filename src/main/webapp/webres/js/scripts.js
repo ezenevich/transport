@@ -1,6 +1,4 @@
 
-
-
 function check() {
     var fav =[];
     var id = document.getElementById('addToFav').dataset.id;

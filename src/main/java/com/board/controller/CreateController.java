@@ -26,10 +26,14 @@ public class CreateController {
         /**
          *  Create new Item in callboard.
          */
+        resp.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
+
         if (req.getParameter("name") == null) {
             ModelAndView model = new ModelAndView("create");
             return model;
         } else {
+            System.out.println(req.getParameter("name") + "   lololololol");
             itemService.addItem(itemService.createItem(
                     req.getParameter("name")
                     , Integer.parseInt(req.getParameter("price"))
