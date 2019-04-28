@@ -11,10 +11,16 @@
     <body class="loginpage">
         <form action="${pageContext.request.contextPath}/login" method="POST" class="login-form">
             <table>
-                <tr><td>Login:</td><td><input type="text" name="login"/><br></td> </tr>
+                <tr><td>Login:</td><td><input type="text" id="login" name="login"/><br></td> </tr>
                 <tr><td>Password:</td><td><input type="password" name="pass"/></td> </tr><br>
-                <tr><td colspan="2"><input type="submit" value="Log In" id="login-form-input-LogIn"/></td></tr> 
+                <tr><td colspan="2"><input type="submit" value="Log In" id="login-form-input-LogIn" onclick="setLogin()"/></td></tr>
             </table>
+            <script>
+                function setLogin() {
+                    var login = document.getElementById('login').value
+                    localStorage.setItem('currentLogin', JSON.stringify(login));
+                }
+            </script>
         </form><hr>
         <div class="login-div-form">
             <table>

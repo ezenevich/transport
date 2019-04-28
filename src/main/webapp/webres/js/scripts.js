@@ -1,3 +1,22 @@
+
+
+
+function check() {
+    var fav =[];
+    var id = document.getElementById('addToFav').dataset.id;
+    var login = $(this).attr('data-login');
+    fav.push(id);
+    console.log(id +"--"+login);
+    localStorage.setItem('fav', JSON.stringify(fav));
+
+}
+
+
+
+
+
+
+
 function addToFav(idFav) {
     $.ajax({
         type: "GET",
@@ -6,7 +25,7 @@ function addToFav(idFav) {
             console.log(response);
             alert("Added to Favorites");
         }, error: function (result) {
-            alert(result.value);
+            alert(result.value + "  45454");
         }
     });
 }
@@ -42,3 +61,4 @@ function validateForm() {
         return false;
     }
 }
+

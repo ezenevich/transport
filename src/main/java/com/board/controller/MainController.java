@@ -21,6 +21,8 @@ public class MainController {
     @RequestMapping("/main")
     public ModelAndView main(HttpServletRequest req) {
 
+
+
         /**
          *  Get login and category for filter, if null return all items.
          */

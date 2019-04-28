@@ -5,13 +5,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Main page</title>
-    <link rel="stylesheet" type="text/css"
-          href="<c:url value='${pageContext.request.contextPath}/webres/css/style.css'/>">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/kursovoi_war/webres/css/style.css">
 
     <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
     <script src="webres/js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
+
 <div class="main-control-menu">
     <div>
         <c:if test="${!isLogin}">
@@ -65,21 +65,27 @@
                 <td>
                     <a href="${pageContext.request.contextPath}/item?id=${i.id}&owner=${i.owner}">
                         <h1>${i.name}</h1>
-                        <img src="${i.img}"/>
+                        <img src="${i.img}"  alt="photo"/>
                         <h5>${i.about}</h5>
-                        <h3>Price: ${i.price} UAH</h3>
+                        <h3>Price: ${i.price} USD</h3>
                     </a>
                     <h5><a href="${pageContext.request.contextPath}/owner?owner=${i.owner}">
                         Owner: ${i.owner}
                     </a></h5>
                 </td>
+
             </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+
         </table>
-        <c:if test="${isLogin}">
-            <button id="addtoFav" onclick="addToFav(${i.id})">Add to favorites</button>
-        </c:if>
+
         <hr>
     </c:forEach>
+
 </div>
 </body>
 </html>

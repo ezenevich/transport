@@ -5,8 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <link rel="stylesheet" type="text/css"
-          href="<c:url value='${pageContext.request.contextPath}/webres/css/style.css'/>">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/kursovoi_war/webres/css/style.css">
     <title>My Account</title>
 </head>
 <body>
@@ -36,7 +35,7 @@
                     <h5>About: ${i.about}</h5>
                     <h5>Category: ${i.category}</h5>
                     <h5>Owner: ${i.owner}</h5>
-                    <h3>Price: ${i.price} UAH</h3>
+                    <h3>Price: ${i.price} USD</h3>
                     <button value='delete from favorites' onclick="deleteFromFavorits(${i.id})">удалить</button>
                     <hr>
                 </div>
@@ -64,5 +63,12 @@
         }).catch(alert);
     }
 </script>
+
+
+<div>
+
+</div>
+
+
 </body>
 </html>
