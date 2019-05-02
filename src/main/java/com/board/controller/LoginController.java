@@ -64,10 +64,10 @@ public class LoginController {
                 try {
                     userForSession = userConverter.userSession(userService.getUserByLogin(login));
                 } catch (NullPointerException e) {
-                    model.addObject("info", "User is not register");
+                    model.addObject("info", "Неверное имя пользователя");
                 }
                 if (userForSession == null) {
-                    model.addObject("info", "User is not register");
+                    model.addObject("info", "Неверное имя пользователя");
                 } else {
                     /**
                     * If login taken from db correct, check password and send User to session, log in.
@@ -75,9 +75,9 @@ public class LoginController {
                     if (userForSession.getPass().equals(pass)) {
                         HttpSession s = req.getSession();
                         s.setAttribute("user", userForSession);
-                        model.addObject("info", "You are logged in");
+                        model.addObject("info", "Авторизация прошла успешна");
                     } else {
-                        model.addObject("info", "Incorrect password");
+                        model.addObject("info", "Неверный пароль");
                     }
                 }
                 return model;

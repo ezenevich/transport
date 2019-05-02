@@ -14,16 +14,16 @@
     </head>
     <body class="singleItem">
         <div>
-            <h1>Name: ${items.name}</h1>
+            <h1>${items.name}</h1>
             <img src="${items.img}"/>
-            <h5>About: ${items.about}</h5>
-            <h5>Category: ${items.category}</h5>
+            <h5>Описание: ${items.about}</h5>
+            <h5>Категория: ${items.category}</h5>
             <h5><a href="${pageContext.request.contextPath}/owner?owner=${items.owner}">
-            Owner: ${items.owner}</a></h5>
-            <h5>Phone to buy: ${owner.phone}</h5>
-            <h3>Price: ${items.price} USD</h3>
+            Владелец: ${items.owner}</a></h5>
+            <h5>Телефон: ${owner.phone}</h5>
+            <h3>Цена: ${items.price} USD</h3>
             <c:if test="${isLogin}">
-                <button data-id="${items.id}"  id="addToFav" onclick="check()">
+                <button data-id="${items.id}"  id="addToFav" onclick="addFavorites(${items.id})">
                     добавить в Избранное</button>
             </c:if>
             <hr>
@@ -54,6 +54,20 @@
                 fav[login]= arr;
                 localStorage.setItem('fav', JSON.stringify(fav));
 
+            }
+
+            function addFavorites(id) {
+
+                var request = "id=" + id;
+                console.log(request);
+                fetch('#', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, application/xml, text/plain, text/html,'
+                    },
+                    body: request
+                }).catch(alert);
+                alert("Запись добавлена в Избранное")
             }
         </script>
 

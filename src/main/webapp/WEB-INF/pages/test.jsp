@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link type="text/css" rel="stylesheet" href="webres/css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="http://localhost:8080/kursovoi_war/webres/css/style.css"/>
         <script src="webres/js/scripts.js" type="text/javascript"></script>
         <title>JSP Page</title>
     </head>

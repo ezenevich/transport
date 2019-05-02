@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Owner Page</title>
+    <title>Владелец</title>
     <link rel="stylesheet" type="text/css"
-          href="<c:url value='${pageContext.request.contextPath}/webres/css/style.css'/>">
+          href="http://localhost:8080/kursovoi_war/webres/css/style.css">
 </head>
 <body>
 <div>

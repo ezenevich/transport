@@ -10,10 +10,19 @@ function check() {
 }
 
 
+function addFavorites(id) {
 
-
-
-
+    var request = "id=-" + id;
+    console.log(request);
+    fetch('${pageContext.request.contextPath}/item', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, application/xml, text/plain, text/html,',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        },
+        body: request
+    }).catch(alert);
+}
 
 function addToFav() {
     var id = document.getElementById('addToFav').dataset.id;

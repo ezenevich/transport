@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Login page</title>
+    <title>Записки.by</title>
     <link rel="stylesheet" type="text/css"
-          href="<c:url value='${pageContext.request.contextPath}/webres/css/style.css'/>">
+          href="http://localhost:8080/kursovoi_war/webres/css/style.css">
     <script src="webres/js/scripts.js" type="text/javascript"></script>
 </head>
 <body onload="redirectTimeOut('${pageContext.request.contextPath}/main');">
@@ -14,10 +14,10 @@
 
 
 <form class="info-form-main-btn" action="${pageContext.request.contextPath}/main">
-    <input type="submit" value="Main"/>
+    <input type="submit" value="На главную"/>
 </form>
 <form class="info-form-redirect-timer">
-    Redirecting to Main Page in <span id="countdown">5</span>.
+    Вы будете перенаправленны на главную страницу через: <span id="countdown">5</span>.
 </form>
 </body>
 </html>

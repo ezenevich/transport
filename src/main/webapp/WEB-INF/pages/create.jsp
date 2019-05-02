@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Создать запись</title>
         <link rel="stylesheet" type="text/css"
-              href="<c:url value='${pageContext.request.contextPath}/webres/css/style.css'/>">
+              href="http://localhost:8080/kursovoi_war/webres/css/style.css">
         <script src="webres/js/scripts.js" type="text/javascript"></script>
     </head>
     <body>

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link rel="stylesheet" type="text/css" href="http://localhost:8080/kursovoi_war/webres/css/style.css">
-    <title>My Account</title>
+    <title>Личный кабинет</title>
 </head>
 <body>
 <div>

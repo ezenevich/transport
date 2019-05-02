@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -40,6 +42,8 @@ public class SingleItemController {
     @Qualifier(value = "favServ")
     private FavoriteService favoriteService;
 
+    private UserForSession u = null;
+
     @RequestMapping("/item")
     public ModelAndView singleItem(HttpServletRequest req) {
 
@@ -58,12 +62,20 @@ public class SingleItemController {
         model.addObject("items", itemConverter.convertItemForSingle(itemConverter.getItemById(id, items)));
         model.addObject("owner", userForOwner);
 
-        UserForSession u = (UserForSession) req.getSession().getAttribute("user");
+        u = (UserForSession) req.getSession().getAttribute("user");
 
         model.addObject("userData", u);
-        
-        favoriteService.updateFavorites(u, id);
 
+        //favoriteService.updateFavorites(u, id);
+
+        return model;
+    }
+
+    @RequestMapping(value = "/item", method = RequestMethod.POST)
+    public ModelAndView  addFav(@RequestParam String id) {
+        ModelAndView model = new ModelAndView("info");
+        favoriteService.updateFavorites(u, id);
+        model.addObject("info", "Запись добавлена в Избранное");
         return model;
     }
 }
