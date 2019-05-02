@@ -20,6 +20,12 @@ public class UserConverter {
         return user;
     }
 
+    public User userToFav(String login, String pass, String fav, String phone) {
+        String favor = new Gson().toJson(fav);
+        User user = new User(login, pass, favor, phone);
+        return user;
+    }
+
     public UserForSession userSession(User user) {
         UserForSession userForSession = new UserForSession();
         userForSession.withId(user.getId()).withLogin(user.getLogin()).withPass(user.getPass()).withFav(user.getFav()).withPhone(user.getPhone());

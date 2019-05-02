@@ -15,10 +15,12 @@ function check() {
 
 
 
-function addToFav(idFav) {
+function addToFav() {
+    var id = document.getElementById('addToFav').dataset.id;
     $.ajax({
         type: "GET",
-        url: "/userAccount?id=" + idFav + "",
+        url: "/userAccount",
+        data: {text: id},
         success: function (response) {
             console.log(response);
             alert("Added to Favorites");

@@ -14,5 +14,7 @@ public interface FavoriteService {
 
     List<ItemForOwner> crudFavorites(UserForSession userForSession, String id, List<Item> listItems);
 
+    void updateFavorites(UserForSession userForSession, String id);
+
     Integer stringToInteger(String sInt);
 }

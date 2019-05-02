@@ -34,4 +34,10 @@ public class UserServiceImpl implements UserService {
     public void updateUser(User user) {
         udao.updateUser(user);
     }
+
+    public void deleteUser(User user) {
+        udao.deleteUser(user);
+    }
+
+
 }

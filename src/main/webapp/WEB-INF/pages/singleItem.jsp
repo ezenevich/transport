@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Item page</title>
+        <title>Объявление</title>
         <link rel="stylesheet" type="text/css"
               href="http://localhost:8080/kursovoi_war/webres/css/style.css">
         <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
@@ -28,6 +28,7 @@
             </c:if>
             <hr>
         </div>
+
         <script>
             function check() {
                 var set = new Set(); // хранит id записей

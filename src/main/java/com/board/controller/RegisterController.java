@@ -35,9 +35,9 @@ public class RegisterController {
                         login,
                         req.getParameter("pass"),
                         req.getParameter("phone")));
-                model.addObject("info", "Register success!!!");
+                model.addObject("info", "Регистрация прошла успешна!!!");
             } else {
-                model.addObject("info", "Login already used.");
+                model.addObject("info", "Пользоватил с таким именем уже есть.");
             }
             return model;
         }

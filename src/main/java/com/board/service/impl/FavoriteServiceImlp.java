@@ -63,6 +63,14 @@ public class FavoriteServiceImlp implements FavoriteService {
         return listUpdate;
     }
 
+    public void updateFavorites(UserForSession userForSession, String id) {
+        Favorites fav = new Gson().fromJson(userForSession.getFav(), Favorites.class);
+        Favorites upFav = updateFav(fav, id);
+        String backToJsonFav = new Gson().toJson(upFav);
+        userForSession.setFav(backToJsonFav);
+        userService.updateUser(userConverter.sessionForUser(userForSession));
+    }
+
     public Integer stringToInteger(String sInt) {
         Integer integer = null;
         if (sInt != null && !sInt.equals("")) {
