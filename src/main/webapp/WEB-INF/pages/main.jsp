@@ -33,9 +33,14 @@
                 <h3>Фильтрация:</h3>
                 <form action="main">
                     Выберите категорию:<select name="category">
-                    <option>все</option>
-                    <option>mb</option>
-                    <option>proc</option>
+                    <option>all</option>
+                    <option>phones</option>
+                    <option>laptops</option>
+                    <option>gadgets</option>
+                    <option>consumer-electronics</option>
+                    <option>shoes</option>
+                    <option>clothing</option>
+                    <option>sports-equipment</option>
                 </select><br>
                     Введите логин:<input name="login"/>
                     <input type="submit" value="Принять"/>
@@ -73,15 +78,7 @@
                         Владелец: ${i.owner}
                     </a></h5>
                 </td>
-
-            </tr>
-            <tr>
-                <td>
-
-                </td>
-            </tr>
-
-        </table>
+                    </table>
 
         <hr>
     </c:forEach>

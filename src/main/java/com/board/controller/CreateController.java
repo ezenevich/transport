@@ -33,7 +33,6 @@ public class CreateController {
             ModelAndView model = new ModelAndView("create");
             return model;
         } else {
-            System.out.println(req.getParameter("name") + "   lololololol");
             itemService.addItem(itemService.createItem(
                     req.getParameter("name")
                     , Integer.parseInt(req.getParameter("price"))

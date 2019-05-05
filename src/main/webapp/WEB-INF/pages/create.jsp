@@ -16,15 +16,20 @@
         <div id="create-div">
             <form action="create" class="creation-form" method="post">
                     <table>
-                        <tr><td>Enter name:</td><td>     <input type="text" name="name"/></td></tr><br>
-                        <tr><td>Enter about:</td><td>    <input type="text" name="about"/></td></tr><br>
-                        <tr><td>Enter price:</td><td>    <input type="text" name="price"/></td></tr><br>
-                        <tr><td>Enter img:</td><td>      <input type="text" name="img"/></td><td>link(http://)</td></tr><br>
-                        <tr><td>Enter smallimg:</td><td> <input type="text" name="smallimg"/></td><td>link(http://)</td></tr><br>
-                        <tr><td>Enter category:</td><td> <select name="category">
-                                    <option>proc</option>
-                                    <option>mb</option>
-                                </select></td></tr><br>
+                        <tr><td>Заголовок:</td><td>     <input type="text" name="name"/></td></tr><br>
+                        <tr><td>Описание:</td><td>    <input type="text" name="about"/></td></tr><br>
+                        <tr><td>Цена (USD):</td><td>    <input type="text" name="price"/></td></tr><br>
+                        <tr><td>Фото:</td><td>      <input type="text" name="img"/></td><td>link(http://)</td></tr><br>
+                        <tr><td>Маленькое фото:</td><td> <input type="text" name="smallimg"/></td><td>link(http://)</td></tr><br>
+                        <tr><td>Категория:</td><td> <select name="category">
+                            <option>phones</option>
+                            <option>laptops</option>
+                            <option>gadgets</option>
+                            <option>consumer-electronics</option>
+                            <option>shoes</option>
+                            <option>clothing</option>
+                            <option>sports-equipment</option>
+                        </select></td></tr><br>
                         <tr><td colspan="2"><input type="submit" value="Создать" id="create-input-submit"/></td></tr>
                     </table>  
 
@@ -32,7 +37,7 @@
             
         </div>
         <a href="${pageContext.request.contextPath}/main" class="create-ahref-main-btn">
-                <input type="submit" value="Main"/>
+                <input type="submit" value="На главную"/>
             </a>
     </body>
 </html>

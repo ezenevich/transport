@@ -16,8 +16,7 @@
 <form class="info-form-main-btn" action="${pageContext.request.contextPath}/main">
     <input type="submit" value="На главную"/>
 </form>
-<form class="info-form-redirect-timer">
-    Вы будете перенаправленны на главную страницу через: <span id="countdown">5</span>.
+<form class="info-form-redirect-timer">Вы будете перенаправленны на главную страницу через: <span id="countdown">5</span>.
 </form>
 </body>
 </html>
