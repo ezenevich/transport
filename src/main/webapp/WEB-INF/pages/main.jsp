@@ -32,7 +32,7 @@
             <div class="filter">
                 <h3>Фильтрация:</h3>
                 <form action="main">
-                    Выберите категорию:<select name="category">
+                    Выберите категорию:<select name="category" id="select-fil">
                     <option>all</option>
                     <option>phones</option>
                     <option>laptops</option>
@@ -62,10 +62,13 @@
     </div>
 </div>
 <div>
-    <h1>Объявления:</h1>
+    <h1 style="padding-left: 50px;">Объявления:</h1>
     <hr>
     <c:forEach items="${items}" var="i">
-        <table>
+        <table style="
+                    background-color: rgba(141, 70, 178, 0.07);
+                    width: 100%;
+                    padding-left: 50px;">
             <tr>
                 <td>
                     <a href="${pageContext.request.contextPath}/item?id=${i.id}&owner=${i.owner}">

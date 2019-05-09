@@ -28,12 +28,12 @@ body {
     width: 320px;
 }
 .main-control-menu{
-    background: #db59d4;
+    background: #be58db;
     position: fixed ;
     right: 0;
     margin-top: 20px;
     margin-right: 5px;
-    height: 265px;
+
 }
 
 .login-form{
@@ -106,7 +106,7 @@ img{
     width: 500px;
     font-size: 18px;
 }
-.filter > select{
+#select-fil{
     margin-left: 20px;
 }
 #create-submit{
@@ -123,7 +123,7 @@ img{
     width: 185px;
 }
 #log-fil-input{
-    margin-left: 28px;
+    margin-left: 9px;
 }
 
 
