@@ -24,7 +24,7 @@
             Список ранее просмотренных объявлений:
         </c:when>
         <c:otherwise>
-            <h1 id="label-of-list">Item:</h1>
+            <h1 id="label-of-list">Объявления</h1>
             <hr>
             <c:forEach items="${items}" var="i">
                 <div id="item${i.id}">

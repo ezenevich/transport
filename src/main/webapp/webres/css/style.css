@@ -28,7 +28,7 @@ body {
     width: 320px;
 }
 .main-control-menu{
-    background: #be58db;
+    background: #6e00ff7a;
     position: fixed ;
     right: 0;
     margin-top: 20px;
@@ -156,8 +156,10 @@ input[type=submit] {
     left:45%;
 }
 .info-form-redirect-timer{
+    text-align: center;
     position: fixed;
-    left:43%;
+    left:50%;
+    transform: translate(-50%);
 
 }
 
