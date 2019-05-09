@@ -1,12 +1,12 @@
 body {
-    background:  #E6E6FA;
+    background: #b7eede;
 }
 
 .creation-form{
     
     inline-block: block;
     font-size: x-large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:15px 100px;
     -webkit-border-radius: 5px;
@@ -28,18 +28,18 @@ body {
     width: 320px;
 }
 .main-control-menu{
-    background: #9370DB; 
+    background: #db59d4;
     position: fixed ;
     right: 0;
     margin-top: 20px;
-    margin-right: 5px; 
-
+    margin-right: 5px;
+    height: 265px;
 }
 
 .login-form{
     inline-block: block;
     font-size: xx-large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:25px 100px;
     -webkit-border-radius: 5px;
@@ -53,7 +53,7 @@ body {
 .login-div-form{
  text-align: center;
     font-size: x-large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:25px 100px;
     -webkit-border-radius: 5px;
@@ -70,7 +70,7 @@ body {
 }
 
 .login-form input[type=text], input[type=password]{
-    border: 1px solid #cccccc; 
+    border: 1px solid #c3c3c3;
     border-radius: 3px; 
     -webkit-border-radius: 3px; 
     -moz-border-radius: 3px;
@@ -79,7 +79,7 @@ body {
     outline: none; 
     height: 30px; 
     width: 200px; 
-    color: #cccccc;
+    color: #c3c3c3;
     font-size: 20px;
     font-family: Tahoma; 
 }
@@ -101,6 +101,34 @@ img{
     height: 200px;
 }
 
+.filter{
+    height: 100px;
+    width: 500px;
+    font-size: 18px;
+}
+.filter > select{
+    margin-left: 20px;
+}
+#create-submit{
+    margin: 25px 50px;
+    width: 160px;
+}
+#cubinet-submit{
+    position: absolute;
+    left: 270px;
+    top: 25px;
+}
+#login-filter{
+    margin-left: 30px;
+    width: 185px;
+}
+#log-fil-input{
+    margin-left: 28px;
+}
+
+
+
+
 .singleItem img{
     width: 500px;
     height: 500px;
@@ -109,7 +137,7 @@ input[type=submit] {
     padding:5px 15px; 
     font-size: 14px;
     border: 2px solid #00BFFF;
-    width:18ex;
+    width:150px;
     height:4ex;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -136,7 +164,7 @@ input[type=submit] {
 .register-form{
      inline-block: block;
     font-size: xx-large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:15px 100px;
     -webkit-border-radius: 5px;
@@ -148,7 +176,7 @@ input[type=submit] {
 }
 
 .register-form input[type=number], input[type=password], input[type=text]{
-    border: 1px solid #cccccc; 
+    border: 1px solid #c3c3c3;
     border-radius: 3px; 
     -webkit-border-radius: 3px; 
     -moz-border-radius: 3px;
@@ -157,7 +185,7 @@ input[type=submit] {
     outline: none; 
     height: 30px; 
     width: 200px; 
-    color: #cccccc;
+    color: #c3c3c3;
     font-size: 20px;
     font-family: Tahoma; 
 }
@@ -184,7 +212,7 @@ input[type=number]::-webkit-outer-spin-button{
 .single-owner-items-div{
     text-align: center;
     font-size: x-large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:25px 100px;
     -webkit-border-radius: 5px;
@@ -202,7 +230,7 @@ input[type=number]::-webkit-outer-spin-button{
 .useracc-fav-items-div{
    text-align: center;
     font-size: large;
-    background: #E0FFFF;
+    background: #78fdff;
     border: 1px solid #00BFFF;
     padding:5px 50px;
     -webkit-border-radius: 5px;

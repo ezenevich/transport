@@ -10,18 +10,18 @@
 </head>
 <body>
 <div>
-    <h1 align="center">Welcome: ${user.login}</h1>
+    <h1 align="center">Добро пожаловать: ${user.login}</h1>
 
 </div>
 <div>
     <form action="${pageContext.request.contextPath}/main" class="form-startpage">
-        <input type="submit" value="Main Page">
+        <input type="submit" value="На главную">
     </form>
 </div>
 <div class="useracc-fav-items-div">
     <c:choose>
         <c:when test="${empty items}">
-            Your favorites is empty
+            Ваш список Избранных записей:
         </c:when>
         <c:otherwise>
             <h1 id="label-of-list">Item:</h1>
@@ -29,13 +29,13 @@
             <c:forEach items="${items}" var="i">
                 <div id="item${i.id}">
                     <a href="${pageContext.request.contextPath}/item?id=${i.id}&owner=${i.owner}">
-                        <h1>Name: ${i.name}</h1>
+                        <h1>${i.name}</h1>
                         <img src="${i.smallimg}"/>
                     </a>
-                    <h5>About: ${i.about}</h5>
-                    <h5>Category: ${i.category}</h5>
-                    <h5>Owner: ${i.owner}</h5>
-                    <h3>Price: ${i.price} USD</h3>
+                    <h5>Описание: ${i.about}</h5>
+                    <h5>Категория: ${i.category}</h5>
+                    <h5>Владелец: ${i.owner}</h5>
+                    <h3>Цена: ${i.price} USD</h3>
                     <button value='delete from favorites' onclick="deleteFromFavorits(${i.id})">удалить</button>
                     <hr>
                 </div>

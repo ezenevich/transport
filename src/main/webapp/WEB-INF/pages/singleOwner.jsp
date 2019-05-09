@@ -10,25 +10,25 @@
 </head>
 <body>
 <div>
-    <h1>Owner: ${user.login}</h1><br>
-    <h1>Contact Phone: ${user.phone}</h1>
+    <h1>Владелец: ${user.login}</h1><br>
+    <h1>Телефон: ${user.phone}</h1>
     <form action="${pageContext.request.contextPath}/main" class="form-startpage">
-        <input type="submit" value="Start Page"/>
+        <input type="submit" value="На главную"/>
     </form>
 </div>
 <hr>
 <div>
-    <h1>Owner Items:</h1>
+    <h1>Обьявления владельца:</h1>
     <hr>
     <div class="single-owner-items-div">
         <c:forEach items="${items}" var="i">
             <a href="${pageContext.request.contextPath}/item?id=${i.id}&owner=${i.owner}">
-                <h1>Name: ${i.name}</h1>
+                <h1>${i.name}</h1>
                 <img src="${i.smallimg}"/>
             </a>
-            <h5>About: ${i.about}</h5>
-            <h5>Category: ${i.category}</h5>
-            <h3>Price: ${i.price} UAH</h3>
+            <h5>Описание: ${i.about}</h5>
+            <h5>Категория: ${i.category}</h5>
+            <h3>Цена: ${i.price} USD</h3>
             <hr>
         </c:forEach>
     </div>

@@ -13,7 +13,7 @@
 <body>
 
 <div class="main-control-menu">
-    <div>
+    <div class="menu">
         <c:if test="${!isLogin}">
             <form action="${pageContext.request.contextPath}/register">
                 <input type="submit" value="Регистрация"/>
@@ -22,14 +22,14 @@
         <c:if test="${isLogin}">
 
             <a href="${pageContext.request.contextPath}/create">
-                <input type="submit" value="Создать объявление"/>
+                <input type="submit" id="create-submit" value="Создать объявление"/>
             </a>
             <form action="${pageContext.request.contextPath}/userAccount">
-                <input type='submit' value='Мой кабинет'/>
+                <input type='submit' id="cubinet-submit" value='Мой кабинет'/>
             </form>
 
             <hr>
-            <div>
+            <div class="filter">
                 <h3>Фильтрация:</h3>
                 <form action="main">
                     Выберите категорию:<select name="category">
@@ -42,8 +42,8 @@
                     <option>clothing</option>
                     <option>sports-equipment</option>
                 </select><br>
-                    Введите логин:<input name="login"/>
-                    <input type="submit" value="Принять"/>
+                    Введите логин:<input id="login-filter" name="login"/>
+                    <input type="submit" id="log-fil-input" value="Принять"/>
                 </form>
 
             </div>
