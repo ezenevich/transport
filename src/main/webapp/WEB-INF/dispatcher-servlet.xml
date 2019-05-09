@@ -86,7 +86,11 @@
     <!-- Beans -->
     <bean id="favServ" class="com.board.service.impl.FavoriteServiceImlp" scope="prototype"/>
 
+    <bean id="histServ" class="com.board.service.impl.HistoryServiceImpl" scope="prototype"/>
+
     <bean id="fav" class="com.board.data.Favorites" scope="prototype"/>
+
+    <bean id="hist" class="com.board.data.History" scope="prototype"/>
 
     <bean id="userConv" class="com.board.user.UserConverter" scope="prototype"/>
 

@@ -4,6 +4,7 @@ package com.board.controller;
 import com.board.instance.Item;
 import com.board.item.ItemConverter;
 import com.board.service.FavoriteService;
+import com.board.service.HistoryService;
 import com.board.service.MainService;
 import com.board.service.UserService;
 import com.board.user.UserConverter;
@@ -42,6 +43,10 @@ public class SingleItemController {
     @Qualifier(value = "favServ")
     private FavoriteService favoriteService;
 
+    @Autowired
+    @Qualifier(value = "histServ")
+    private HistoryService historyService;
+
     private UserForSession u = null;
 
     @RequestMapping("/item")
@@ -63,6 +68,8 @@ public class SingleItemController {
         model.addObject("owner", userForOwner);
 
         u = (UserForSession) req.getSession().getAttribute("user");
+
+        historyService.updateHist(u, id);
 
         model.addObject("userData", u);
 

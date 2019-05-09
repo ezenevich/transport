@@ -17,6 +17,8 @@ public class UserForSession {
 
     private String fav;
 
+    private String hist;
+
     private String phone;
 
     public UserForSession withId(int id) {
@@ -38,6 +40,10 @@ public class UserForSession {
         this.fav = fav;
         return this;
     }
+    public UserForSession withHist(String hist) {
+        this.hist = hist;
+        return this;
+    }
 
     public UserForSession withPhone(String phone) {
         this.phone = phone;
@@ -47,6 +53,9 @@ public class UserForSession {
     public String getFav(){
         return fav;
     }
+    public String getHist(){
+        return hist;
+    }
     public String getLogin(){ return login; }
     public String getPass(){ return pass; }
     public String getPhone(){ return phone; }
@@ -54,5 +63,8 @@ public class UserForSession {
 
     public void setFav(String fav){
         this.fav = fav;
+    }
+    public void setHist(String hist){
+        this.hist = hist;
     }
 }
