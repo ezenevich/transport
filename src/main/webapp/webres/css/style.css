@@ -8,7 +8,7 @@ body {
     font-size: x-large;
     background: #78fdff;
     border: 1px solid #00BFFF;
-    padding:15px 100px;
+    padding:15px 50px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px; 
@@ -27,14 +27,9 @@ body {
 #create-input-submit{
     width: 320px;
 }
-.main-control-menu{
-    background: #6e00ff7a;
-    position: fixed ;
-    right: 0;
-    margin-top: 20px;
-    margin-right: 5px;
 
-}
+
+
 
 .login-form{
     inline-block: block;
@@ -109,9 +104,10 @@ img{
 #select-fil{
     margin-left: 20px;
 }
-#create-submit{
+.create-submit{
     margin: 25px 50px;
     width: 160px;
+    border-radius: 20px;
 }
 #cubinet-submit{
     position: absolute;
@@ -239,3 +235,11 @@ input[type=number]::-webkit-outer-spin-button{
     -moz-border-radius: 5px;
     border-radius: 5px;  
 }
+
+.tabOrder{
+    width: 90%;
+    font-size: 15px;
+    align-content: center;
+}
+
+

@@ -4,88 +4,53 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Записки.by</title>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/kursovoi_war/webres/css/style.css">
+    <title>Транспорт Клиент</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/transport_war/webres/css/adminStyle.css">
 
     <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
     <script src="webres/js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
 
-<div class="main-control-menu">
-    <div class="menu">
-        <c:if test="${!isLogin}">
-            <form action="${pageContext.request.contextPath}/register">
-                <input type="submit" value="Регистрация"/>
-            </form>
-        </c:if>
-        <c:if test="${isLogin}">
-
-            <a href="${pageContext.request.contextPath}/create">
-                <input type="submit" id="create-submit" value="Создать объявление"/>
-            </a>
-            <form action="${pageContext.request.contextPath}/userAccount">
-                <input type='submit' id="cubinet-submit" value='Мой кабинет'/>
-            </form>
-
-            <hr>
-            <div class="filter">
-                <h3>Фильтрация:</h3>
-                <form action="main">
-                    Выберите категорию:<select name="category" id="select-fil">
-                    <option>all</option>
-                    <option>phones</option>
-                    <option>laptops</option>
-                    <option>gadgets</option>
-                    <option>consumer-electronics</option>
-                    <option>shoes</option>
-                    <option>clothing</option>
-                    <option>sports-equipment</option>
-                </select><br>
-                    Введите логин:<input id="login-filter" name="login"/>
-                    <input type="submit" id="log-fil-input" value="Принять"/>
-                </form>
-
-            </div>
-            <hr>
-            <a class="a-exit" href="${pageContext.request.contextPath}/login?exit=true">
-                <input type="submit" value="Выход"/>
-            </a>
-        </c:if>
-    </div>
     <div>
-        <c:if test="${!isLogin}">
-            <form action="${pageContext.request.contextPath}/login">
-                <input type="submit" value="Авторизация"/>
-            </form>
-        </c:if>
+
+        <c:choose>
+            <c:when test="${empty order}">
+                <h1 align="center">Увас еще нет заказа.</h1>
+            </c:when>
+
+            <c:otherwise>
+                <h1 id="label-of-list">Ваш заказ</h1>
+                <hr>
+                    <div id="item${order.id}">
+                        <h1>Заказ №${order.id}</h1>
+                        <h2>Направление: ${order.nameRoute}</h2>
+                        <h4>Тип транспорта: ${order.type}</h4>
+                        <h2>Время доставки(час): ${order.totalTime}</h2>
+                        <h2>Стоимость доставки(USD): ${order.totalCoast}</h2>
+                        <h4>Номер трассы: ${order.wayId}</h4>
+                        <h4>Заказчик: ${order.userName}</h4>
+                        <h4>Масса груза (кг): ${order.weight}</h4>
+                        <h4>Статус доставки: ${order.delivery}</h4>
+                        <hr>
+                    </div>
+
+            </c:otherwise>
+        </c:choose>
+
+        <div class="main-but-order">
+            <a href="${pageContext.request.contextPath}/userRouteSelection">
+                <input type="submit" class="create-sub cr-but" value="Сделать заказ"/>
+            </a>
+        </div>
+
+
+        <div class="main-but-exit">
+            <a href="${pageContext.request.contextPath}/index.jsp">
+                <input class="create-sub" type="submit" value="Выход"/>
+            </a>
+        </div>
+
     </div>
-</div>
-<div>
-    <h1 style="padding-left: 50px;">Объявления:</h1>
-    <hr>
-    <c:forEach items="${items}" var="i">
-        <table style="
-                    background-color: rgba(141, 70, 178, 0.07);
-                    width: 100%;
-                    padding-left: 50px;">
-            <tr>
-                <td>
-                    <a href="${pageContext.request.contextPath}/item?id=${i.id}&owner=${i.owner}">
-                        <h1>${i.name}</h1>
-                        <img src="${i.img}"  alt="фото"/>
-                        <h5>${i.about}</h5>
-                        <h3>Цена: ${i.price} USD</h3>
-                    </a>
-                    <h5><a href="${pageContext.request.contextPath}/owner?owner=${i.owner}">
-                        Владелец: ${i.owner}
-                    </a></h5>
-                </td>
-                    </table>
-
-        <hr>
-    </c:forEach>
-
-</div>
 </body>
 </html>

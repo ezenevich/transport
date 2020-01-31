@@ -9,38 +9,8 @@ function check() {
 
 }
 
-
-function addFavorites(id) {
-
-    var request = "id=-" + id;
-    console.log(request);
-    fetch('${pageContext.request.contextPath}/item', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json, application/xml, text/plain, text/html,',
-            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-        },
-        body: request
-    }).catch(alert);
-}
-
-function addToFav() {
-    var id = document.getElementById('addToFav').dataset.id;
-    $.ajax({
-        type: "GET",
-        url: "/userAccount",
-        data: {text: id},
-        success: function (response) {
-            console.log(response);
-            alert("Added to Favorites");
-        }, error: function (result) {
-            alert(result.value + "  45454");
-        }
-    });
-}
-
 function redirectTimeOut(url) {
-    var timeLeft = 5,
+    var timeLeft = 3,
         cinterval;
 
     var timeDec = function () {
@@ -64,8 +34,7 @@ function isNumberKey(evt) {
 function validateForm() {
     var login = document.getElementsByName("login")[0].value;
     var pass = document.getElementsByName("pass")[0].value;
-    var phone = document.getElementsByName("phone")[0].value;
-    if (login == null || login == "", pass == null || pass == "", phone == null || phone == "") {
+    if (login == null || login == "", pass == null || pass == "") {
         alert("Please Fill All Required Field");
         return false;
     }

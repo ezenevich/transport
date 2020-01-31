@@ -9,11 +9,11 @@
     ">
     <context:property-placeholder location="classpath*:db-config.properties, classpath:dev.properties" file-encoding="UTF-8"/>
     <context:annotation-config/>
-    <context:component-scan base-package="com.board"/>
+    <context:component-scan base-package="com.transport"/>
 
 
 
-    <bean class="com.board.utils.profiling.ProfilingBeanPostProcessor" id="profilingBeanPostProcessor"/>
+    <bean class="com.transport.utils.profiling.ProfilingBeanPostProcessor" id="profilingBeanPostProcessor"/>
 
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
@@ -26,7 +26,7 @@
     <!-- Hibernate config -->
     <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="sessionFactory">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.board.instance"/>
+        <property name="packagesToScan" value="com.transport.instance"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
@@ -57,8 +57,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="emf">
-        <property name="packagesToScan" value="com.board.instance" />
+    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="eml">
+        <property name="packagesToScan" value="com.transport.instance" />
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
         <property name="persistenceUnitName" value="stadto"/>
@@ -77,24 +77,20 @@
     </bean>
 
     <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="emf" />
+        <property name="entityManagerFactory" ref="eml" />
         <property name="jpaDialect" ref="jpaDialect"/>
     </bean>
 
     <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
 
     <!-- Beans -->
-    <bean id="favServ" class="com.board.service.impl.FavoriteServiceImlp" scope="prototype"/>
+    <bean id="admin" class="com.transport.admin.Admin" scope="prototype"/>
+    <bean id="user" class="com.transport.data.User" scope="prototype"/>
+    <bean id="route" class="com.transport.data.Route" scope="prototype"/>
+    <bean id="way" class="com.transport.data.Way" scope="prototype"/>
+    <bean id="sector" class="com.transport.data.Sector" scope="prototype"/>
+    <bean id="orderWay" class="com.transport.data.OrderWay" scope="prototype"/>
 
-    <bean id="histServ" class="com.board.service.impl.HistoryServiceImpl" scope="prototype"/>
-
-    <bean id="fav" class="com.board.data.Favorites" scope="prototype"/>
-
-    <bean id="hist" class="com.board.data.History" scope="prototype"/>
-
-    <bean id="userConv" class="com.board.user.UserConverter" scope="prototype"/>
-
-    <bean id="itemConv" class="com.board.item.ItemConverter" scope="prototype"/>
 </beans>
 
 

@@ -9,14 +9,23 @@
           href="http://localhost:8080/transport_war/webres/css/style.css">
     <script src="webres/js/scripts.js" type="text/javascript"></script>
 </head>
-<body onload="redirectTimeOut('${pageContext.request.contextPath}/main');">
+<body>
 <h1 class="info-h1">${info}</h1>
+<c:forEach items="${info2}" var="order">
+    <div id="item${order.id}">
+        <h1>Заказ №${order.id}</h1>
+        <h2>Направление: ${order.nameRoute}</h2>
+        <h2>Стоимость доставки(USD): ${order.totalCoast}</h2>
+        <h4>Номер трассы: ${order.wayId}</h4>
+        <h4>Масса груза (кг): ${order.weight}</h4>
+        <hr>
+    </div>
+</c:forEach>
 
 
-<form class="info-form-main-btn" action="${pageContext.request.contextPath}/main">
+<form class="info-form-main-btn" action="${pageContext.request.contextPath}/adminMain">
     <input type="submit" value="На главную"/>
 </form>
-<form class="info-form-redirect-timer">Вы будете перенаправленны на главную страницу через: <span id="countdown">3</span>.
-</form>
+
 </body>
 </html>

@@ -3,11 +3,18 @@
 <head>
     <title>Home</title>
     <style>
-        .button{
+        .but1{
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            top: 45%;
+            left: 25%;
+        }
+        .but2{
+            position: absolute;
+            top: 45%;
+            right: 25%;
+        }
+        .button{
+            position: relative;
             text-decoration:none;
             text-align:center;
             padding:19px 46px;
@@ -30,12 +37,16 @@
             box-shadow:0px 10px 6px #b79ef7, inset 0px 0px 1px #ffffff;
 
             text-shadow: 0px 2px 3px #de6868;
-            filter: dropshadow(color=#de6868, offx=0, offy=2); }
+            filter: dropshadow(color=#de6868, offx=0, offy=2);
+        }
     </style>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/main">
-    <input type="submit" class="button" value="Пуск"/>
+<form action="${pageContext.request.contextPath}/login" class="but1">
+    <input type="submit" class="button" value="Клиент"/>
+</form>
+<form action="${pageContext.request.contextPath}/adminLogin" class="but2">
+    <input type="submit" class="button" value="Сотрудник"/>
 </form>
 </body>
 </html>
